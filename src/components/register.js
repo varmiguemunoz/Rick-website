@@ -16,7 +16,17 @@ export default function RegisterUser() {
 
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithPopup(auth, provider).then((result) =>{
+      const name =result.user.displayName;
+      const email = result.user.email;
+      const profilePic= result.user.photoURL;
+
+      localStorage.setItem("name", name )
+      localStorage.setItem("email", email )
+      localStorage.setItem("profilePic", profilePic )
+      }).catch ((err) => {
+        console.log(err);
+      })
       navigate('/dashboard')
     } catch (err) {
       setErrorEmail(err.message)
@@ -38,7 +48,7 @@ export default function RegisterUser() {
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="md:relative md:overflow-hidden flex justify-center items-center h-screen md:block">
       <div className="mx-auto max-w-screen-md py-12 px-4 sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8">
         <div className="md:pr-8 md:w-1/2 xl:pr-0 xl:w-5/12">
           <h1 className="text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight">
