@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import RegisterUser from "../components/register";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
