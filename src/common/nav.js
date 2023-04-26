@@ -38,7 +38,6 @@ export default function Navbar() {
 <nav className="bg-white border-gray-200">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
   <Link to="/dashboard" className="flex items-center">
-      <img src="https://rick-website-2sn1hb34d-miguelmunoz09.vercel.app/navbarIcon.jpeg" className="h-9 w-9 mr-2 object-cover rounded-full" alt="Flowbite Logo" />
       <span className="self-center text-2xl font-semibold whitespace-nowrap">Rick & Morty</span>
   </Link>
   <div className="flex items-center md:order-2">
