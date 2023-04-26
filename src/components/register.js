@@ -24,8 +24,6 @@ export default function RegisterUser() {
       localStorage.setItem("name", name )
       localStorage.setItem("email", email )
       localStorage.setItem("profilePic", profilePic )
-      }).catch ((err) => {
-        console.log(err);
       })
       navigate('/dashboard')
     } catch (err) {
@@ -41,7 +39,7 @@ export default function RegisterUser() {
       }
 
       await createUserWithEmailAndPassword(getAuth(), email, password);
-      navigate("/dashboard");
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
